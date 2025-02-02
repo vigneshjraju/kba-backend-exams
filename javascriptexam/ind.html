@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+
+        <h1>Expense Tracker</h1>
+
+        <select id="dropdown" onchange="others()">
+            <option>Shopping</option>
+            <option>Hospital</option>
+            <option>Home</option>
+            <option>Travel</option>
+            <option>Others</option>
+        </select>
+
+        
+
+    </div>
+
+    <div id="others1">
+
+    </div>
+
+    <div id="expenses">
+
+        
+    </div>
+
+    <script>
+
+        array=[];
+
+        function others(){
+
+
+           let  others2=document.getElementById("others1")
+
+           let selectedvalue = document.getElementById("dropdown").value;
+
+           if(selectedvalue !=="Others"){
+            document.getElementById("others1").innerHTML=""
+            return
+           }
+
+            let label1=document.createElement("label");
+            label1.textContent="Type of expense";
+            others2.appendChild(label1)
+
+            let input1=document.createElement("input");
+            input1.type="text";
+            others2.appendChild(input1);
+
+            others2.appendChild(document.createElement("br"));
+
+
+            let label2=document.createElement("label");
+            label2.textContent="Amount";
+            others2.appendChild(label2)
+
+            let input2=document.createElement("input");
+            input2.type="text";
+            others2.appendChild(input2)
+
+
+            others2.appendChild(document.createElement("br"));
+
+            let label3=document.createElement("label");
+            label3.textContent="Date";
+            others2.appendChild(label3)
+
+            let input3=document.createElement("input");
+            input3.type="Date";
+            others2.appendChild(input3)
+
+            others2.appendChild(document.createElement("br"));
+
+            let submit1=document.createElement("button")
+            submit1.textContent = "Add Expense";
+            submit1.addEventListener("click",()=>{
+                array.push({
+                    "type":input1.value,
+                    "amount":parseInt(input2.value),
+                    "date":input3.value,
+                })
+
+                console.log(array)
+            })
+            
+            others2.appendChild(submit1);
+
+            let total=0;
+            let expenses20=document.getElementById("expenses");
+            
+
+            let button2=document.createElement("button");
+            button2.textContent="Show All expense"
+            others2.appendChild(button2)
+            
+            
+            button2.addEventListener("click",()=>{
+                expenses20.innerHTML = "";
+                
+                array.forEach(element => {
+                    
+                    list=document.createElement("p");
+                    list.textContent=`Type: ${element.type} <br> Amount:${element.amount} <br>  Date:${element.date}`
+                    expenses20.appendChild(list)
+
+                    total=total+element.amount
+
+                });
+
+                
+                    let total1=document.createElement("p");
+                    total1.innerHTML=`Total:${total}`;
+                    expenses20.appendChild(total1);
+
+
+            })
+
+            let button3 = document.createElement("button");
+            button3.textContent = "Show Expenses by Date";
+            others2.appendChild(button3);
+
+            let dateInput = document.createElement("input");
+            dateInput.type = "date";
+            others2.appendChild(dateInput);
+
+            button3.addEventListener("click", () => {
+                let selectedDate = dateInput.value;
+               
+                expenses20.innerHTML = ""; 
+                let totalByDate = 0;
+
+                array.forEach((element) => {
+                    if (element.date === selectedDate) {
+                        let list = document.createElement("p");
+                        list.innerHTML = `Type: ${element.type} <br> Amount: ${element.amount} <br> Date: ${element.date}`;
+                        expenses20.appendChild(list);
+
+                        totalByDate += element.amount;
+                    }
+                });
+
+                if (totalByDate > 0) {
+                    let total2 = document.createElement("p");
+                    total2.innerHTML = `Total for ${selectedDate}: ${totalByDate}`;
+                    expenses20.appendChild(total2);
+                } else {
+                    expenses20.innerHTML = `No expenses found for ${selectedDate}`;
+                }
+            });
+
+
+        }
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

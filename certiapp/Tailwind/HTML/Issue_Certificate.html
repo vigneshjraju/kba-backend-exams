@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+</head>
+<body class="bg-gray-200 py-12">
+
+        <div class="flex justify-between mx-8">
+
+            <div>
+                <p class="text-xl font-bold">Certificate App</p>
+            </div>
+
+            <div>
+                <a href="frontpage.html" class="mr-6 text-xl hover:bg-red-400 hover:text-blue-900">Home</a>
+                <a href="Issue Certificate.html" class="mr-6 text-xl hover:bg-red-400 hover:text-blue-900">Issue Certificate</a>
+            </div>
+            
+        
+        </div>
+
+        <br>
+
+            <div class="w-[900x] mx-[100px] bg-cyan-50 shadow-lg shadow-teal-950 rounded-xl  px-40 py-8">
+
+                    <p class="font-bold text-3xl text-center">Issue New Certificate</p>
+                        <br>
+
+                    <div>
+                        
+                        <div>
+
+                            <p class="font-bold text-2xl">Select Course*</p>
+
+                            <select name="text" class="hover:bg-lime-400 w-64 ring-2 ring-red-400" > 
+                                <option value="Certificate Blockchain Associate">Certificate Blockchain Associate</option>
+                                <option value=" Certified Cybersecurity Associate">Certified Cybersecurity Associate</option>
+                            </select>
+
+                        </div>
+                        <br>
+
+                        <div>
+
+                            <p class="font-bold text-2xl">Certificate ID*</p>
+
+                            <input type="text" class="w-64 ring-2 ring-red-400" placeholder="Certificate ID" required>
+
+                        </div>
+
+                        <br>
+
+                        <div>
+
+                            <p class="font-bold text-2xl">Candidate Name*</p>
+
+                            <input type="text" class="w-64 ring-2 ring-red-400" placeholder="Name" required>
+
+                        </div>
+
+                        <br>
+
+                        <div>
+
+                            <p class="font-bold text-2xl">Select Grade*</p>
+
+                            <select name="text" class="hover:bg-lime-400 w-64 text-center ring-2 ring-red-400" >
+                                <option value="text"> S </option>
+                                <option value="text">A</option>
+                                <option value="text">B</option>
+                            </select>
+
+                        </div>
+
+                        <br>
+
+                        <div>
+
+                            <p class="font-bold text-2xl">Issue Date*</p>
+
+                            <input type="date" class=" w-64 text-center ring-2 ring-red-400" required>
+
+                        </div>
+
+                        <br>
+
+                        <a href="viewcertificate.html"><input type="submit" class="bg-sky-700 text-white w-44 h-8 rounded-xl mt-4 hover:bg-red-400 hover:text-blue-900 font-bold" value="Issue Certificate"></a>
+
+
+
+                    </div>
+
+
+            </div>
+
+    
+</body>
+</html>

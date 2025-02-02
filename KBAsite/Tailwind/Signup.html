@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+
+        function submit(){
+            let firstname=document.getElementById("first").value;
+
+            let lastname=document.getElementById("last").value;
+
+            let userName=document.getElementById("username").value;
+
+            let password=document.getElementById("pass").value;
+
+            let userrole=document.getElementById("select").value;
+
+            const response= fetch("http://127.0.0.1:8000/signup",{
+
+                method:'POST'
+
+
+            })
+
+
+        }
+
+
+    </script>
+
+
+
+
+</head>
+<body class="bg-white" >
+
+    <div class="flex bg-white w-full">
+      <div class="w-8/12">
+          <img src="kba.jpeg" alt="kba" class="w-24">
+      </div>
+      
+    </div>
+    
+   </div>
+   <div class="w-full  bg-white">
+    <div class="bg-teal-50 w-6/12  ml-[400px]  shadow-lg shadow-teal-950">
+     <br>
+     <h3 class="text-center text-purple-800 text-2xl mt-16 font-bold">
+         Signup
+     </h3>
+     <form action="text" class="ml-16 pt-7 pl-48 text-xl font-bold" onsubmit="submit()">
+         
+            <div> 
+                First Name:
+            </div>
+             
+             
+            <div>
+                <input type="text" id="first"  class="w-80 ring-1 ring-red-600">
+            </div>
+            <br>
+            <div> 
+                Last Name:
+            </div>
+             
+             
+             <div>
+                <input type="text" id="last" class="w-80 ring-1 ring-red-600">
+            </div>
+          
+ <br>
+          <div>
+             Username:
+         </div>   
+    
+                 <input type="text" placeholder="Type username" id="username" class="w-80 ring-1 ring-red-600" required>
+        
+        <div>
+         <br>
+         <div>
+             Password:
+         </div>
+         <div>
+                 <input type="password" id="pass" placeholder="****" class="w-80 ring-1 ring-red-600"required>
+             </div>
+             <br>
+          
+            <div>
+                User Role:
+            </div>
+             
+             <div>
+ 
+                 <select name="User" id="select" class="w-80 text-center ring-1 ring-red-600" required>
+
+                     <option value="Admin" >Admin</option>
+                     <option value="Student">User</option>
+
+                 </select>
+             </div>  
+ <br>
+             <div>
+         
+                 <input type="submit" value="Signup" class="bg-purple-600 w-28  text-white hover:bg-lime-400 hover:text-blue-900">
+             </div>    
+             <br>
+             <div>
+                 Already have a account.
+                 &nbsp;<a href="login.html" class="text-purple-500  hover:text-blue-900">login</a>
+             </div>
+             <br> 
+             <br>  
+         </form>    
+   
+</div>   
+</body>
+</html>
+
+

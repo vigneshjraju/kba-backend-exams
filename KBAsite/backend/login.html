@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+
+        async function submit2(){
+            event.preventDefault();
+
+            let user=document.getElementById("username1").value;
+            let password1=document.getElementById("passw").value;
+            console.log(user);
+            console.log(password1);
+            
+            
+
+            const response1=await fetch("http://127.0.0.1:8000/login",{
+
+                method:'POST',
+
+                headers:{
+                    'Content-Type':'application/json'
+                },
+
+                body:JSON.stringify({
+                    userName:user,
+                    password:password1
+                })
+
+
+            })
+
+            const data1=await response1.text();
+            console.log(data1);
+            
+
+            console.log(response1.status);
+
+            if(response1.status=='201'){
+                window.location.href="Addcourse.html"
+            }
+
+            else if(response1.status=='401'){
+                alert("Username already exist.")
+            }
+            else {
+                alert("Try after sometime.")
+            }
+
+
+        }
+
+
+    </script>
+
+</head>
+
+<body class="bg-white">
+    <div class="flex bg-white w-full">
+        <div class="w-8/12">
+            <img src="kba.jpeg" alt="kba" class="w-24">
+        </div>
+        
+      </div>
+
+    </div>
+    <div class="w-full  bg-white">
+       <div class="bg-teal-50 w-6/12  ml-[400px]  shadow-lg shadow-teal-950 ">
+        <br>
+        <h3 class="text-center text-purple-800 text-2xl mt-16 font-bold">
+            Login
+        </h3>
+        <form  class="ml-16 pt-7 pl-48 text-xl font-bold" onsubmit="submit2()">
+            
+             <div>
+                Username:
+            </div>   
+       
+                    <input type="text" placeholder="type username" id="username1" class="w-80 ring-1 ring-red-600" required>
+           
+           <div>
+            <br>
+            <div>
+                Password:
+            </div>
+            <div>
+                    <input type="password" placeholder="****" id="passw" class="w-80 ring-1 ring-red-600"required>
+                </div>
+                <br>
+             
+                <div>
+            
+                    <input type="submit" value="Login" class="bg-purple-600 w-28  text-white hover:bg-lime-400 hover:text-blue-900">
+                    <a href="login.html" class="text-2s  text-purple-400 pl-8 hover:text-blue-900">Forgot Password?</a>
+                </div>    
+                <br>
+                <div>
+                    Don't have an account?
+                    &nbsp;<a href="Signup.html" class="text-purple-400  hover:text-blue-900">Sign Up</a>
+                </div>
+                <br> 
+                <br>  
+            </form>       
+
+
+    
+</body>
+</html>
