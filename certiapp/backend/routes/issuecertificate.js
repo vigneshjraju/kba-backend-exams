@@ -84,7 +84,9 @@ issue.post('/issuecertificate',authenticate,(req,res)=>{
         const cert1=issuer.get(certis);
 
         if(cert1){
-            res.status(201).send("Certificate successfully fetched")
+            res.status(201).json(cert1);
+            console.log("Certificate successfully fetched");
+            
         }
         else{
             res.status(401).send("certificate not fetched")

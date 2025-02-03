@@ -22,7 +22,7 @@ const authenticate=(req,res,next)=>{
             console.log(verified);
 
             req.username=verified.UserName; 
-            req.userrole=verified.UserRole; 
+            req.userrole=verified.Userrole; 
 
             next() 
         }

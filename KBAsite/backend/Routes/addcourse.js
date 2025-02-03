@@ -67,7 +67,7 @@ addcourse.post('/addcourse',authenticate,(req,res)=>{
         const coursedetails=course.get(name);
 
         if (coursedetails) {
-            res.status(200).json(coursedetails);
+            res.status(200).jdescriptionson(coursedetails);
             console.log(coursedetails);
         
         } 

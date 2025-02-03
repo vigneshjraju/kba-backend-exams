@@ -89,4 +89,15 @@ userauth.post('/login',async(req,res)=>{
 
 })
 
+
+
+
+userauth.get('/logout',(req,res)=>{
+
+    res.clearCookie("authToken"),
+    res.status(201).send("Logout successfully")
+
+})
+
+
 export {userauth}
