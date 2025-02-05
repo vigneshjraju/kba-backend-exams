@@ -1,45 +1,66 @@
 import { Router } from "express";
 import authenticate from "../Middleware/auth.js";
 import admincheck from "../Middleware/adminauth.js"
+import { sample1 } from "../Models/sample.js";
 
 const addcourse=Router();
-const course=new Map(); // for addcourse
+// const course=new Map(); // for addcourse
 
 
-addcourse.post('/addcourse',authenticate,(req,res)=>{
+addcourse.post('/addcourse',authenticate,admincheck,async(req,res)=>{
 
     try{  
   
-          if(req.userrole=="admin"){
+          
               const {courseName,courseId,courseType,description,price}=req.body ;
-  
+              const existingcourse=await sample1.findOne({COURSENAME:courseName})
 
-              if(course.get(courseName)){
-                  console.log(`The coursename ${courseName} is already opted.`)
-                  res.status(400).send("Course already opted")
-  
+              if(existingcourse){
+                res.status(400).send("Course already Exists")
               }
-  
+
               else{
-                  course.set(courseName,{
-                      courseId,
-                      courseType,
-                      description,
-                      price})
-  
-                      console.log(course.get(courseName))
-            
-                  res.status(201).send("Course added Successfully")    
+                const newCourse=new sample1({
+                    Coursename:courseName, //schema:postman
+                    CourseID:courseId,
+                    Coursetype:courseType,
+                    Description:description,
+                    Price:price
+
+                })
+
+                await newCourse.save();
+                res.status(201).send("Course added Successfully")
+
               }
-          }
-          else{
-              res.status(403).json({msg:"You are not allowed to do this"})
-          }
+
+              
+
+
+            //   if(course.get(courseName)){
+            //       console.log(`The coursename ${courseName} is already opted.`)
+            //       res.status(400).send("Course already opted")
+  
+            //   }
+  
+            //   else{
+            //       course.set(courseName,{
+            //           courseId,
+            //           courseType,
+            //           description,
+            //           price})
+  
+            //           console.log(course.get(courseName))
+            
+            //       res.status(201).send("Course added Successfully")    
+            //   }
+         
       }
   
-      catch{
-          res.status(500).send("Internal Server error")
-      }
+      catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+    }
   
   
   
@@ -59,27 +80,42 @@ addcourse.post('/addcourse',authenticate,(req,res)=>{
 
   //2.Query
 
-  addcourse.get('/getcourse',(req,res)=>{
+addcourse.get('/getcourse',async(req,res)=>{
 
  try{
-        const name=req.query.courseName;
-        console.log(name);
-        const coursedetails=course.get(name);
 
-        if (coursedetails) {
-            res.status(200).jdescriptionson(coursedetails);
-            console.log(coursedetails);
+        const name=await sample1.find();
         
-        } 
-        else {
-        res.status(404).send("Course not found.");
-
+        if(name){
+            res.status(201).send(name);
+            console.log("Course fetched successfully.");
+            
         }
+        else{
+            res.status(400).send("Course not found.")
+        }
+
+
+
+        
+        // const name=req.query.courseName;
+        // console.log(name);
+        // const coursedetails=course.get(name);
+
+        // if (coursedetails) {
+        //     res.status(200).jdescriptionson(coursedetails);
+        //     console.log(coursedetails);
+        
+        // } 
+        // else {
+        // res.status(404).send("Course not found.");
+
+        // }
     }
 
  catch{
 
-        res.status()
+        res.status(500).send("Internal server error.")
 
   }  
     

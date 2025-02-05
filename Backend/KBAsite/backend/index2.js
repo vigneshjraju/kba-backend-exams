@@ -1,5 +1,6 @@
 import express,{json} from 'express';
 import dotenv from 'dotenv';
+import mongoose from 'mongoose';
 
 import { userauth1 } from './Routes/userauth1.js';
 
@@ -35,3 +36,12 @@ app.use('/',addcourse);
 app.listen(process.env.PORT,function(){
     console.log(`server is listening at ${process.env.PORT}`)
 })
+
+mongoose.connect('mongodb://localhost:27017/KBA_Course').then(()=>{
+        
+    console.log('MongoDB connected successfully to KBACourse');
+})
+.catch((error)=>{
+    console.error('MongoDB connection failed',error);
+    
+});
