@@ -2,43 +2,67 @@ import { Router } from "express";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv'
+import { sign } from "../model/usermodel.js";
 
 
 dotenv.config();
 const userauth=Router();
-const user= new Map();
+// const user= new Map();
 
 userauth.post('/signup',async(req,res)=>{
     try{
 
         const {Username,Email,Password,Userrole}=req.body
 
-        const newpassword=await bcrypt.hash(Password,10)
+        const existingUser=await sign.findOne({USERNAME:Username})
 
-
-        if(user.get(Username)){
-            console.log(`The username ${Username} is already taken.`)
-            res.status(400).send("Username already exist")
-    
+        if (existingUser){
+            res.status(400).send("User already exists.")
         }
         else{
-            user.set(Username,{
-                Email,
-                newpassword,
-                Userrole})
 
-            console.log(user);
+        const newpassword=await bcrypt.hash(Password,10)
+
+        const newuser=new sign({
+
+            USERNAME:Username,
+            EMAIL:Email,
+            PASSWORD:newpassword,
+            USERROLE:Userrole
+
+        })
+
+        await newuser.save();
+        res.status(201).json({message:"Signup Successfully"});
+
+
+
+        // if(user.get(Username)){
+        //     console.log(`The username ${Username} is already taken.`)
+        //     res.status(400).send("Username already exist")
+    
+        // }
+        // else{
+        //     user.set(Username,{
+        //         Email,
+        //         newpassword,
+        //         Userrole})
+
+        //     console.log(user);
             
               
-            res.status(201).send("Signup Successfully")    
+        //     res.status(201).send("Signup Successfully")    
+        // }
+
+
+
         }
-
-
-
     }
 
-    catch{
-        res.status(500).send("Internal server error")
+    catch(error){
+        console.error(error);
+        res.status(500).json({message:"Internal Server error."})
+        
     }
 
 

@@ -66,7 +66,7 @@ userauth1.post('/signup',async(req,res)=>{
     
 
     
-    // user.set(userName,{
+    // user.set(userName,{onst name=req.query.courseName;
     //     firstName,
     //     lastName,
     //     userName,
@@ -115,9 +115,11 @@ userauth1.post('/login',async(req,res)=>{
         }
 
         else{
-            console.log(result.newpassword);const course=new Map();
+            // console.log(result.newpassword);const course=new Map();
             // const valid=await bcrypt.compare(password,result.newpassword);
-            const valid=await bcrypt.compare(password,result.password) //compare typed password with schema password
+            const valid=await bcrypt.compare(password,result.password)
+            
+            //compare typed password with schema password
             // console.log(valid);
 
             if(valid){

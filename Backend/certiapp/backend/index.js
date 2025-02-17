@@ -2,6 +2,7 @@ import express,{json} from 'express';
 import dotenv from 'dotenv';
 import { userauth } from './routes/userauth.js';
 import { issue } from './routes/issuecertificate.js';
+import mongoose from 'mongoose';
 
 
 dotenv.config();
@@ -13,10 +14,20 @@ certi.use('/',userauth);
 
 certi.use('/',issue);
 
+mongoose.connect('mongodb://localhost:27017/Certiapp').then(()=>{
+
+    console.log("Mongodb successfully connected to Certiapp");
+
+})
+.catch((error)=>{
+    console.error("Mongodb connection failed",error);
+    
+})
+
+
+
 certi.listen(process.env.PORT,function(){
 
     console.log(`server is listening at ${process.env.PORT}`)
 
 })
-
-

@@ -17,22 +17,14 @@ const demo1=new Schema({
     CourseID:{type:String,required:true},
     Coursetype:{type:String,required:true},
     Description:{type:String},
-    Price:{type:String}
+    Price:{type:String},
+    Image:{type:String}
     
 })
 
 const sample1=model('Coursedetails',demo1);
 
-const demo2=new Schema({
-    Coursename:{type:String,unique:true},
-    CourseID:{type:String,required:true},
-    Coursetype:{type:String,required:true},
-    Description:{type:String},
-    Price:{type:String}
-    
-})
 
-const sample2=model('getCourse',demo2);
 
 
 export {sample,sample1}
