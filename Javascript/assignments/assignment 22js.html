@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+    <h3>Temperature Converter</h3>
+    
+
+    <div>
+        <p>Temperature (Celsius)</p>
+        <input type="text" id="texts">
+        <input type="button" value="Fahrenheit Converter" onclick="converter()">
+    </div>
+
+    <p id="temperature"></p>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <form onsubmit="printid(event)" >
+        <h3>Id card</h3>
+
+        
+
+        <p>Name</p>
+        <input type="text" id="names">
+
+        <p>Class</p>
+        <input type="text" id="classs">
+
+
+
+        <p>Date of birth</p>
+        <input type="date" id="dateofbirth">
+        <br>
+        <br>
+        <input type="submit" value="Generate ID">
+
+
+        <div>
+            <p id="schoolname"></p>
+            
+            <p id="names1"></p>
+            
+            <p id="class1"></p>
+            
+            <p id="dateofbirth1"></p>
+        </div>
+
+    </form>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <h3>Square</h3>
+        <p id="typenumber">Type the number</p>
+        <input type="number" id="number22">
+        <br>
+        <input type="button" value="square" onclick="squarethenumber()">
+
+        <div>
+            <p id="squareofthenumber1"></p>
+        </div>
+
+
+
+
+
+
+
+    <script>
+
+        //containing an input tab to enter temperature in celsius and on a button click, it should be converted to fahreinheit
+        function converter(){
+            conv=(document.getElementById("texts").value*(9/5))+32
+            document.getElementById("temperature").innerHTML=`<h4>${conv} Fahrenheit</h4>`
+            
+        }
+
+        //read "name, date-of-birth" and diaplay this in format of id card on clicking "generate ID" button.
+
+        function printid(event){
+
+            event.preventDefault()
+
+            schoolname2=document.getElementById("schoolname").innerHTML=`<h2>SN PUBLIC SCHOOL</h2>`
+            
+            names2=document.getElementById("names").value
+            names3=document.getElementById("names1").innerHTML=`Name:<h3>${names2}</h3>`
+            
+            class2=document.getElementById("classs").value
+            names3=document.getElementById("class1").innerHTML=`Class:<h3>${class2}</h3>`
+            
+            dateofbirth2=document.getElementById("dateofbirth").value
+            dateofbirth3=document.getElementById("dateofbirth1").innerHTML=`Date of Birth:<h3>${dateofbirth2}</h3>`
+        
+        }
+
+        //read a number and on clicking button find the square of the number.
+        
+        function squarethenumber(){
+
+            typed=document.getElementById("number22").value
+            squ=(typed**2)
+            document.getElementById("squareofthenumber1").innerHTML=`The square of the number <h4>${typed}=${squ}</h4>`
+        }
+
+
+            
+        
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

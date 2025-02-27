@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2 >Fruits selector</h2>
+    <br>
+    
+    <p>Enter a fruit name:</p>
+    <input type="text" id="typename">
+    <input type="button" value="Add Fruit" onclick="Addfruit1()">
+
+    <br>
+    <br>
+
+    <p>Select a Fruit index:</p>
+    <select  id="fruitsdropdown" onchange="selectdropdown()">
+        <option>Select a fruit</option>
+    </select>
+
+    <br>
+    <br>
+
+    <p>Selected Fruit:</p>
+    <p id="selectedfruit"></p>
+
+
+    <script>
+
+        fruits=[]
+
+
+        function Addfruit1(){
+
+            fruitinput=document.getElementById("typename").value;
+            fruits.push(fruitinput)
+
+            let dropdown=document.getElementById("fruitsdropdown")
+
+            let option=document.createElement("option");
+            option.value=fruits.length-1;
+            option.textContent="fruits"+fruits.length;
+
+            dropdown.appendChild(option);
+
+            document.getElementById("typename").value="";
+        }
+            
+
+        
+
+        function selectdropdown(){
+            
+            i=document.getElementById("fruitsdropdown").value
+
+            if(i!=""){
+                document.getElementById("selectedfruit").textContent=fruits[i];
+
+            }
+            else{
+                document.getElementById("selectedfruit").textContent=""
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

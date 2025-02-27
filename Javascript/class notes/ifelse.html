@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let a=10,b=12;
+
+            if (a>b)
+                {
+                    document.write(`a is greater than b ` )
+                }
+            
+            else
+                {
+                    document.write(`b is greater than a`)
+                }
+
+        let c=15;
+            
+            if (a>b && a>c)
+                {
+                    document.write(`<br><br>a is greater than both b and c`)
+                }
+            
+            else if (b>a && b>c)
+                {
+                    document.write(`<br><br> b is greater tham both a and c `)
+                }     
+
+            else
+                {
+                    document.write(`<br><br>c is greater tham both a and b`)
+                }
+     
+                if(c==a)
+                    {
+                        document.write(`<br><br>${c} and ${a}are equal`)
+                    }   
+
+                else 
+                    {
+                        document.write(`<br><br>${c} and ${a}are  not equal`)
+                    }    
+                
+                    
+                      a=15;
+                      c="15"
+
+                        if(c===a)
+                            {
+                                document.write(`<br><br> ${a} and ${c} are equal`)
+                            }
+
+                        else
+                            {
+                                document.write(`<br><br> ${a} and ${c} are not equal`)
+                            }    
+
+                    let x="*";
+                    
+                            switch(x)
+                            {
+                                case "+":{
+                                
+                                    document.write(`<br><br>The sum is ${a+b} `);
+                                    break;
+
+                                }
+
+                                case "-":{
+
+                                    document.write(`<br><br>The difference is ${a-b}`);
+                                    break;
+                                }
+
+                                case "/":{
+                                    document.write(`<br><br>The quotient is ${a/b}`);
+                                    break;
+                                }
+
+                                case "*":{
+                                    document.write(`<br><br>The product is ${a*b}`);
+                                    break;
+                                }
+
+                                default:{
+                                    document.write(`<br><br>enter a valid operator`);
+                                    
+                                }
+                                
+                                
+                            }
+                    
+
+
+
+    </script>
+    
+</body>
+</html>

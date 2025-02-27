@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        
+    
+
+        function submit(){
+
+            const subject = document.getElementById("subject").value;
+            const mark = parseInt(document.getElementById("mark").value);
+            const result = document.getElementById("result");
+
+            if (!subject || mark<0 || mark>100){
+                result.textContent="Please enter a valid subject and mark between 0 and 100.";
+                return;
+            }
+
+            let grade="";
+
+            if(mark>90){
+                grade="A+";
+            } 
+            else if(mark>80){
+                grade="A";
+            } 
+            else if(mark>70){
+                grade="B+";
+            } 
+            else if(mark>60){
+                grade="c+";
+            } 
+            else if(mark>50){
+                grade="c";
+            } 
+            else{
+                grade="Fail"
+            }
+
+            result.textContent=`Subject: ${subject}, Mark: ${mark}, Grade: ${grade}`;
+    
+
+        }
+
+
+    </script>
+
+
+
+</head>
+<body>
+
+        <div class="bg-slate-300 mx-16  my-16 w-[600px] border-2 border-black px-16 py-16">
+
+            <div class="flex justify-between">
+                <label class="font-bold text-xl w-[200px]">Name of the subject: </label>
+                <input type="text"  id="subject" class="flex-1 border-2 border-black">
+            </div>
+
+            <br>
+
+            <div class="flex justify-between">
+                <label class="font-bold text-xl w-[200px]">Mark: </label>
+                <input type="number"  id="mark" class="flex-1 border-2 border-black">
+
+            </div>
+
+            <br>
+
+            <input type="button"  id="submit" value="submit" class="ml-52 bg-blue-300 border-2 border-black" onclick="submit()">
+
+            <div id="result"></div>
+
+        </div>
+
+
+
+</body>
+</html>

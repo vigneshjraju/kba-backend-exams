@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <form onsubmit="name1(event)">
+
+            <h2>Identity card</h2>
+            <p>School</p>
+
+            <p>Name:</p>
+                <input type="text" id="name">
+                
+            
+
+            <p>Class</p>
+                <input type="text" id="classs">
+            <br>
+            <br>
+                <input type="submit" required value="Generate ID" >
+                
+             
+            <div id="print">
+                <p id="print5"></p>
+                <p id="nameprint"></p>
+                <p id="classprint"></p>
+                
+            </div>
+
+        </form>
+
+    <script>
+
+        {   let a=[2,4,6,8];
+            document.write(`The array of a is ${a}<br><br>`)
+
+            let b=[]
+            let c=[]
+
+            //for each 
+
+            {//Anonymous function
+                a.forEach(function(x){
+            
+                x=x+2;
+                b.push(x);
+                
+
+                } )
+
+                document.write(`The value of b is:${b}`)
+            }    
+
+            {//arrow function
+                a.forEach((x)=>{
+                x=x+2;
+                c.push(x)
+            })
+            document.write(`<br><br>The value of c is:${c}`)
+            }
+            
+        }
+
+        {
+            const student={
+                            fname:"Vignesh",
+                            lname:" J Raju",
+                            phoneno:"9074671161",
+                            address:{
+                                housename:"Nandhana",
+                                area:"Kadapakada Nagar 129",
+                                Town:"Kollam"
+
+                            }
+                            };
+
+                            document.write(`<br><br>The contact no of ${student.fname}${student.lname} is: ${student.phoneno}`)
+                            document.write(`<br>The housename of  ${student.fname} is ${student.address.housename}`)
+         }
+
+        {
+            const student={
+                            fname:"Sarath",
+                            lname:" K Balan",
+                            phoneno:"9074671161"
+                            };
+                            student.status="Student"
+                            document.write(`<br><br>The contact no of ${student.fname}${student.lname} is: ${student.phoneno}`)
+                            document.write(`<br> The status of ${student.fname}${student.lname} is ${student.status} `)
+                        }
+
+        {
+            const student={
+                            fname:"Jasim",
+                            lname:" KI",
+                            phoneno:"9074671161"
+                            };
+
+                            document.write(`<br><br>The contact no of ${student.fname}${student.lname} is: ${student.phoneno}`)
+        }
+
+        {
+            const student={
+                            fname:"Ajay",
+                            lname:" Murali",
+                            phoneno:"9074671161"
+                            };
+
+                            document.write(`<br><br>The contact no of ${student.fname}${student.lname} is: ${student.phoneno}`)
+        }
+
+        {
+            function name1(event){
+                event.preventDefault();
+
+                let schoolname=document.createElement('h2')
+                schoolname.textContent="SN Public"
+                
+
+
+                let name2=document.getElementById("name").value
+                document.getElementById("nameprint").innerHTML=name2
+
+                let class2=document.getElementById("classs").value
+                document.getElementById("classprint").innerHTML=class2
+            }
+        }    
+
+        const student41={
+            name:name,
+            class1:classs,
+        }
+        document.write(`${student41.name}`)
+
+        
+
+    </script>
+
+
+
+</body>
+</html>

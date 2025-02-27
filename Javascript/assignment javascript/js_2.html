@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+
+        function others(){
+
+            let select=document.createElement("select")
+
+            let degrees=["BCA", "PGDCA", "BCom", "MPhil"]
+
+            degrees.forEach((degree)=>{
+                let option = document.createElement("option");
+                option.textContent = degree;
+                select.appendChild(option);
+            })
+
+            let others1=document.getElementById("others")
+            others1.appendChild(select)
+
+        }
+
+        
+
+
+    </script>
+
+
+</head>
+<body>
+
+    <div class="bg-blue-300 px-4 py-4 w-[800px] rounded-3xl shadow-xl show-black"> 
+
+        <div class="flex gap-4 mx-24 my-20 flex justify-between ">
+            <p class="font-bold text-xl mt-[10px] w-[100px] ">Name:</p>
+            <input type="text" id="name" class="flex-1 h-12 border-2 border-black rounded-xl">
+        </div>
+
+        <div class="flex gap-4 mx-24 my-20 flex justify-between">
+            <p class="font-bold text-xl mt-[10px] w-[100px]">Address:</p>
+            <textarea id="address" class="flex-1 border-2 border-black rounded-xl"></textarea>
+        </div>
+
+        <div class="flex gap-4 mx-24 my-20 flex justify-between">
+            <p class="font-bold text-xl mt-[10px] w-[100px]">Degree:</p>
+            
+            <div class="flex gap-4 mt-4 flex-1">
+
+                <div class="flex gap-4">
+
+                    <div>
+                        <input type="radio" name="degree">
+                    </div>
+
+                    <p class="font-bold">B.Tech</p>
+                </div>
+
+                <div class="flex gap-4">
+
+                    <div>
+                        <input type="radio" name="degree">
+                    </div>
+
+                    <p class="font-bold">M.Tech</p>
+
+                </div>
+
+                <div class="flex gap-4">
+
+                    <div>
+                        <input type="radio" name="degree">
+                    </div>
+
+                    <p class="font-bold">MCA</p>
+
+                </div>
+
+                <div class="flex gap-4"> 
+
+                    <div>
+                            <input type="radio" name="degree" onclick="others()">
+
+                    </div>
+                    
+                    <p class="font-bold">Others</p>
+
+                    <div id="others"></div>
+
+                    
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

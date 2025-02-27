@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+
+    <script>
+
+        const mymap=new Map();
+        mymap.set("name","<b>Vignesh</b>");
+        mymap.set("age",25);
+        mymap.set("Employ",true);
+
+        document.write("Name: ",mymap.get(`name`))
+        document.write("<br>Size of the map: ",mymap.size)
+        console.log(mymap.get(`name`))
+        console.log(mymap)
+        document.write("<br><br>function has (in name) -",mymap.has(`name`))
+
+        let delete1=mymap.delete(`name`)
+        console.log(mymap)
+
+        let clear1=mymap.clear(`age`)
+        console.log(mymap)
+
+        const mymap2=new Map()
+        mymap2.set("name",["<b>Vignesh</b>","<b>Sarath</b>","<b>Jasim</b>"])
+        mymap3=mymap2.get('name')
+        document.write("<br><br>",mymap3.join(","))
+        console.log(mymap3)
+
+        const mymap4=new Map([
+            ["Name","<b>Vignesh</b>"],
+            ["Age",25],
+            ["Status","<b>Student</b>"],
+            ["Role",["<b>Admin</b>","<b>User</b>"]]])
+
+        console.log(mymap4)
+        
+        
+        //iteration
+
+        
+            let output="";
+
+            mymap4.forEach((value,key)=>{
+
+                if(Array.isArray(value)){
+
+                output+=`${key} = ${value.join('and')} <br>`
+
+                }    
+                else
+                
+
+                output+=`${key} = ${value} <br>`
+            })
+
+            output1=document.write("<br><br>",output)
+
+
+
+
+
+            
+
+
+
+        
+        
+        
+            
+
+        
+
+
+    </script>
+
+
+</head>
+<body>
+
+    
+    
+
+    
+    
+</body>
+</html>

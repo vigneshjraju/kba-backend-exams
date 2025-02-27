@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+
+        array=[];
+
+        function submit(){
+
+            let values=parseInt(document.getElementById("element").value);
+            let display=document.getElementById("display");
+            let display1=document.getElementById("display2");
+
+            if(values){
+                array.push(values);
+                display.innerHTML="Array: "+array.join(",");
+                
+
+            }
+
+            if (array.length === 0) {
+                display1.innerHTML = "Please enter elements in the array.";
+            } else {
+
+                const largest = Math.max(...array);
+                display1.innerHTML = `The largest element is: ${largest}`;
+            }
+
+
+
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+    
+    <div>
+
+            <div class="bg-slate-300 mx-16  my-16 w-[600px] border-2 border-black px-16 py-16">
+
+                <p class="font-bold text-xl text-center"> Print Largest element</p>
+                <br>
+                <label class="font-bold text-xl">Enter element :</label>
+                <input type="number"  id="element" class="border-2 border-black">
+
+                <br>
+                <br>
+
+                <input type="button"  id="maximum" value="Maximum" class="w-20 bg-blue-400 border-2 border-black ml-40" onclick="submit()">
+
+                <br>
+                <br>
+                <div id="display" class="font-bold"></div>
+
+                <div id="display2" class="font-bold"></div>
+
+                <br>
+                <br>
+                
+
+
+            </div>
+
+    </div>
+
+
+</body>
+</html>

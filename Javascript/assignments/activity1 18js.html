@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <div id="about">
+        <h1>
+            VIGNESH J RAJU
+        </h1>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div id="listofcinemas">
+        <h3>These are some list of cinemas according to Internet movie database</h3>
+    </div>
+
+    <br>
+    <br><br>
+    <div id="programmes">
+        <H3>The list of programming language classes</H3>
+    </div>
+    <br>
+    <br><br>
+
+    <div id="Cakes">
+        <h3>The list of cakes</h3>
+
+    </div>
+    <br>
+    <br><br>
+   
+
+
+    <script>
+
+      //Activity 1
+
+        //print a para about yourself using createElement() , textContent & append child.
+        let aboutme=document.createElement("p")
+        aboutme.textContent="As a B.Tech graduate in Industrial Engineering, I bring strong academic and practical skills to streamline operations. I am passionate about enhancing the efficiency of industrial processes through workforce optimization. I aim to contribute to innovations in the field with my commitment to lead initiatives in sustainable practices and technology-driven solutions as a future industrial engineer."
+        let name=document.getElementById("about").appendChild(aboutme)
+
+
+
+        
+        //unordered list of cinemas on html page using javascript.
+      {
+        let cinemas=["Pulp Fiction","The Shawshank Redemption","Fight Club","Forrest Gump"];
+
+        
+
+        let ul=document.createElement("ul");
+
+        for(i=0;i<cinemas.length;i++){
+            li=document.createElement("li");
+            li.textContent=cinemas[i];
+            ul.appendChild(li);
+        }
+
+        let listofcinemas=document.getElementById("listofcinemas")
+        
+        listofcinemas.appendChild(ul)
+
+      }
+
+
+
+      //dropdown for programming language classes
+      {
+        let programmingclasses=["javascript","java","python","c++"]
+
+        let selection=document.getElementById("programmes")
+
+        let select=document.createElement("select");
+
+        let placeholder=document.createElement("option");
+            placeholder.textContent="Select a Programme class"
+            
+            placeholder.selected=true;
+            placeholder.disabled=true;
+
+            select.appendChild(placeholder)
+
+        for(i=0;i<programmingclasses.length;i++){
+
+             option=document.createElement("option");
+             option.textContent=programmingclasses[i];
+             select.appendChild(option)
+        }
+
+        selection.appendChild(select)
+
+        
+      }
+
+
+      //List of cakes
+
+      {
+        cakes=["Ice cream cake","Cheesecake","Carrot cake","Pound cake","Coffee cake"]
+
+        let cakes1=document.getElementById("Cakes")
+
+        let selection=document.createElement("select");
+
+        let placeholder=document.createElement("option");
+            placeholder.innerHTML="select the cake";
+            
+            placeholder.selected=true;
+            placeholder.disabled=true;
+
+            selection.appendChild(placeholder)
+
+            
+        
+        for(i=0;i<cakes.length;i++){
+          
+            let option=document.createElement("option");
+            option.textContent=cakes[i];
+            
+            selection.appendChild(option)
+
+        }
+
+        selection.selectedIndex=2 
+
+        
+        cakes1.appendChild(selection)
+
+      }
+
+      //Print your full name storing fname & lname. Print in Uppercase.
+
+      {
+        let fname="Vignesh"
+        let lname=" J Raju"
+
+        fullname=`<b>${fname}${lname}</b>`
+        
+
+        document.write(fullname.toUpperCase())
+
+        fullname1=document.getElementById("fullname")
+   
+      }
+
+
+      //You can study anything if you have a will to do it
+      //substrings "You can study”, “you”,”will”,”do it”
+
+      {
+        let string="You can study anything if you have a will to do it"
+
+        stringlength=string.length
+        
+
+        let string1=string.substring(0,13);
+        
+        let string2=string.substring(45,50)
+        
+        let string3=string.substring(36,41)
+        
+        let string4=string.substring(25,30)
+        
+
+        string5=document.write("<br><br><br>",string1+string4+string2+string3)
+
+      }
+
+
+      //MongoDB is a decentralised distributed ledger . MongoDB can eliminate centralisation.
+      
+      {
+        let mongo="MongoDB is a decentralised distributed ledger . MongoDB can eliminate centralisation."
+
+        mongo1=mongo.replaceAll("MongoDB","Blockchain")
+        
+
+        document.write("<br><br><br>",mongo1)
+      }
+
+
+      //Print the string “MongoDB is a decentralised distributed ledger” using substring/substr.
+
+      {
+        string="MongoDB is a decentralised distributed ledger"
+
+        document.write("<br><br><br>",string.length)
+
+        substring=string.substring(0,45)
+
+        document.write("<br>",substring)
+
+
+      }
+
+      //Compare “Hello World” & “hEllO World” and display the result & its type.
+
+      {
+        str1="Hello World"
+        str2="hEllO World"
+
+        document.write("<br><br><b>str1=</b>",str1)
+        document.write("<br><b>str2=</b>",str2)
+
+        str3=str1===str2
+
+        document.write("<br><b>The result of str1 and str2 is</b> ",str3)
+        document.write("<br><b>The type of str1 and str2 is </b>",typeof str3)
+      }
+
+      //Print this statement “ I am ___ yrs of old and my brother is 10 yrs older to me. He is now __ years old.”
+
+      {
+        let myage=26;
+        let brotherage=myage+10
+
+        document.write(`<br><br>I am <b>${myage}</b> yrs of old and my brother is 10 yrs older to me. He is now <b>${brotherage}</b> years old.`)
+      }
+
+      //My name is ________.(declaring fname & lastname in uppercase). I live in ____(uppercase).
+
+      {
+
+        let fname="Vignesh"
+        let lname=" J Raju"
+        let state="kerala"
+
+        let fname1= fname.toUpperCase();
+        let lname2= lname.toUpperCase();
+        let kerala1=state.toUpperCase();
+
+        document.write(`<br><br><br>My name is <b>${fname1+lname2}</b>. I live in <b>${kerala1}</b>`)
+
+      }
+
+      //these two statements “I like to play video games.” “I don’t like Hide & seek”. Change 'like' to 'don't like'.
+
+      {
+        let str1="<b>I like to play video games.</b>"
+        document.write("<br><br><br>",str1)
+
+        str2=str1.replace("like","don't like")
+
+        document.write("<br><br>After replacing like to don't like the result is:<br><br> ",str2)
+
+      }
+
+      //Write a JavaScript program to compute the sum of the two given integers. If the sum is in the range 50..80 return 65 otherwise return 80 (using ternary operator).
+
+      {
+        a=45;
+        b=54;
+
+        sum=a+b;
+
+        result=(sum>=50 && sum<=80)? 65:80;
+
+        document.write("<br><br><br>The result is :",result)
+
+      }
+
+      //Program to find whether the person is eligible for voting using ternary operator
+
+      {
+        let personage=19;
+        document.write("<br><br><br>Person's age:",personage)
+
+        let votersage=(personage>=18)? "Eligible for voting":"Not Eligible for voting"
+
+        document.write("<br>",votersage)
+      }
+
+
+      
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

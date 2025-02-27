@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekshmi maam</title>
+</head>
+<body>
+    
+    <script>
+
+        //sum and average of numbers from 10 to 50 //
+
+        {
+         a=0
+         s=0
+         i=10;
+         n=50;
+        while (i<=n){
+            s=i+s;
+            a=s/40;
+            
+            i++
+        }
+
+            
+            document.write(`<br>Sum of natural numbers from 10-50 is:<br>${s}`)
+            document.write(`<br> Average of sum of natural numbers from 10-50 is:<br> ${a}`)
+        }  
+
+        
+        //multiplication table of 4//
+
+        {
+            i=0
+            s=4
+
+            document.write(`<br><br>multiplication table of 4:`)
+            while(i<10){
+
+
+                  i++
+                  document.write(`<br>${s*i}`)
+
+
+            }
+            
+            
+
+        }
+
+        //cube of a numbers from 10 to 30//
+
+        {
+            i=10;
+            
+            document.write(`<br><br>cube of a numbers from 10 to 30`)
+            while(i<=30){
+                document.write(`<br>${i**3}`)
+                i++
+            }
+            
+
+        }
+
+        
+
+
+
+
+        //patterns//
+
+        {
+            document.write("<br><br>print the patterns")
+    
+                        document.write("<br>25,30,35,40,45,50")
+                        document.write("<br>The pattern is: ")
+
+                        for(i=25;i<=50;i=i+5){
+                          document.write(i,",")
+                        }
+    
+                         document.write("<br><br>10,100,1000,10000")
+                         document.write("<br>The pattern is: ")
+                         m=10;
+
+                        for(i=1;i<=4;i++) {
+                         document.write(m,",");
+                         m=m*10;
+                        }
+
+    
+                         document.write("<br><br>8,10,12,14,16,18,20")
+                         document.write("<br>The pattern is: ")
+                            n=8;
+                             for(i=n;i<=20;i=i+2){
+                             document.write(i,",")
+                        }
+        }
+
+        //reverse of a number
+        {
+            let aio=123;
+            document.write(`<br><br>The variable aio=${aio}`)
+
+
+            let aios=0;
+            let reversedaio=0;
+
+            
+                while(aio>0){
+
+                    aios=aio%10;
+                    reversedaio=reversedaio*10+aios;
+                    aio=Math.floor(aio/10);
+
+                    
+                }
+
+                document.write(`<br>The reverse of aio = ${reversedaio}`)
+    
+            
+        }
+
+        //palindrome of a string
+        {
+            aio="Madam"
+            palindrome=""
+
+            for(i=0;i<aio.length/2;i++){
+                if(aio[i]!=aio[aio.length-1-i]){
+                    pallindrome="not"
+                }
+                else{
+                    pallindrome="is"
+                }
+            }
+
+            document.write(`<br><br>The given string aio=${aio}  ${pallindrome} a palindrome`)
+
+
+
+
+
+        }
+
+    
+
+        
+
+        
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+
+
+
+    <script>
+
+        const person=new Object();
+        person.fname="Vignesh";
+        person.lname="J Raju";
+        person.BasicPay=24000;
+        person.TA=10000;
+        person.DA=2000;
+
+        person.GrossSalary=function(){
+            return person.BasicPay+person.TA+person.DA
+            
+        }
+
+        person.getDetails=function(){
+            return `${person.GrossSalary()}`
+        }
+    
+    
+        document.write(`<br>Person Name:${person.fname+person.lname}
+        <br>Basic Pay:${person.BasicPay}<br>TA:${person.TA} <br> Person Gross Salary: ${person.getDetails()}`);
+
+        {
+
+
+
+        }
+
+        
+
+        
+
+
+    </script>
+
+
+
+
+</body>
+</html>

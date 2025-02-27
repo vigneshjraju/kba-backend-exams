@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+        
+    
+
+        <script>
+
+        const person=new Object();
+        person.fname="Vignesh";
+        person.lname="J Raju";
+        person.BasicPay=24000;
+        person.TA=10000;
+        person.DA=2000;
+
+
+            let array=Object.values(person);
+            console.log(`Array:${array}`)
+
+            const str=JSON.stringify(person);
+            console.log(`JSON String:${str}`)
+
+            const JsonF=JSON.parse(str);
+            console.log(JsonF)
+
+
+
+        </script>
+
+
+
+</body>
+</html>

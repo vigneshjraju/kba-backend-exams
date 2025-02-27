@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+
+
+</head>
+<body>
+    
+
+    <div id="list"></div>
+
+
+    <script>
+
+        cinemas=["Pulp Fiction","The Shawshank Redemption","Fight Club","Forrest Gump"]
+
+        ul=document.createElement("ul")
+
+        cinemas.forEach(x => {
+
+            li=document.createElement("li")
+            li.textContent=x;
+            ul.appendChild(li)
+
+
+            
+        });
+
+        cinemaslist=document.getElementById("list").appendChild(ul)
+
+
+        {
+            cakes=["Ice cream cake","Cheesecake","Carrot cake","Pound cake","Coffee cake"]
+
+            select=document.createElement("select")
+
+            cakes.forEach(y=>{
+                option=document.createElement("option");
+                option.textContent=y;
+                select.appendChild(option)
+            })
+
+            cakeslist=document.getElementById("list").appendChild(select)
+
+
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>

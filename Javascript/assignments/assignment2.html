@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let a=14;
+        let b=65;
+
+                document.write("The value of a before swap is:",a, 
+                "<br> The value of b before swaping is:",b)
+
+                console.log(`The value of a before swap is: ${a}\nThe value of b before swap is: ${b}`)
+        
+        {let c=a;
+             a=b;
+             b=c;
+
+                document.write("<br><br>With using Temp variable")
+                document.write("<br>The value of a after swap is:",a, 
+                "<br> The value of b after swaping is:",b)
+        
+                console.log(`\n\nThe value of a after swap is: ${a}\nThe value of b after swap is: ${b}`)
+         }
+
+        
+        {   let a=14;
+            let b=65;
+
+            a=a+b
+            b=a-b
+            a=a-b
+            
+                    document.write("<br><br>Without using Temp variable")
+                    document.write("<br>The value of a is:",a)
+                    document.write("<br>The value of b is:",b)
+        }
+
+        {
+            let celsius=20 
+            let fahrenheit=(celsius*(9/5))+32
+
+            document.write("<br><br>20 degree celsius is equal to ",fahrenheit," fahrenheit<br><br>")
+            console.log(`20 degree celsius is equal to ${fahrenheit} fahrenheit`)
+
+        }
+
+        {
+            let a=5
+            let b=a**2
+
+           document.write("The value of b which is the square of the a is:",b)
+
+        }
+
+        {
+            let a=5
+            let b=a**3
+
+           document.write("<br>The value of b which is the cube of the a is:",b)
+
+        }
+
+        {
+            let side=15
+            let length=10
+            let breadth=20
+            let base=breadth
+            let height=50
+            let radius=5
+
+            let AreaofSquare=(side**2)
+            let AreaofCircle=Math.PI*(radius**2)
+            let AreaofRectangle=(length*breadth)
+            let AreaofTriangle=(1/2)*(base*height)
+
+            let PofSquare=4*side
+            let PofCircle=2*Math.PI*radius
+            let PofRectangle=2*(length+breadth)
+            let PofTriangle=length+base+height
+
+            document.write("<br><br><br>The Area of the square is:",AreaofSquare)
+            document.write("<br> The Area of the Circle is:",AreaofCircle)
+            document.write("<br> The Area of the Rectangle is:",AreaofRectangle)
+            document.write("<br> The Area of the Triangle is:",AreaofTriangle)
+
+            document.write("<br><br>The Perimeter of square is:",PofSquare,
+            "<br>The Perimeter of circle is:",PofCircle,
+            "<br> The Perimeter of rectangle is:",PofRectangle,
+            "<br> The Perimeter of triangle is:",PofTriangle)
+
+
+        }
+
+        {
+            let Principle=200
+            let Rate=5
+            let Time=1
+
+            let Amount=(Principle*(1+(Rate/100)**Time))
+            let Simpleinterest=((Principle * Rate * Time)/100)
+            let Compoundinterest=(Amount-Principle)
+
+            document.write("<br><br>The simple interest on a sum of 200 rupees in 1 year at 5% rate is:",
+            Simpleinterest,
+            "<br>The Compound interest on a sum of 200 rupees in 1 year at 5% rate is:",
+            Compoundinterest)
+
+        }
+
+
+        {
+            let a=10;
+            let b=20;
+            let Largest=(a>b) ?  "a":"b";
+            let Smallest=(a<b)?  "a":"b";
+  
+                document.write("<br><br>The largest value is :",Largest)
+                document.write("<br>The smallest value is :",Smallest,"<br><br>")
+        }
+
+        {
+    
+            let a=-15
+            let Result1=(a===0) ? "Zero":"Non-Zero"
+            let Result=(a>0) ? "Positive":"Negative";
+
+                document.write("The number is:",Result1)
+                document.write("<br>The number is:",Result)
+     
+     
+        }
+
+        {
+            let SambuAge=18
+            let Votersage=(a>=18) ? "Sambu is Eligible for Voting":"Sambu is Not Eligible for voting"
+
+            document.write("<br><br>",Votersage)
+        }
+
+        {
+            let a=50;
+            let b=20;
+            
+
+            let c=(a+b);
+            result=(c>=50 && c<=80)? 65:80 
+        
+
+                document.write("<br><br> The value of c is ",result)
+
+        }
+
+        
+  
+        
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

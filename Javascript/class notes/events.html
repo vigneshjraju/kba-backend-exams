@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+        .print{
+            border-style: solid;
+            border-color: black;
+        }
+
+    </style>
+
+</head>
+<body>
+    <label> age:</label>
+    <input type="text" id="age" onchange="handlechange()" >
+    <br>
+    <br>
+    <br>
+    <label>type:</label>
+    <input type="text" id="type">
+    <input type="button" value="submit" onclick="submission()">
+    
+    <br>
+    <br>
+    <br>
+    <label>Enter side length to calculate</label>
+    <input type="text" id="squareside">
+    <input type="button" value="calculate" onclick="calculate()">
+    <br>
+    <br>
+    <br>
+    
+    <div>
+        <form onsubmit="name1(event)">
+
+            <h2>Identity card</h2>
+            <p>School</p>
+
+            <p>Name:</p>
+                <input type="text" id="name">
+                
+            
+
+            <p>Class</p>
+                <input type="text" id="class">
+            <br>
+            <br>
+                <input type="submit" required value="Generate ID" >
+                
+             
+            <div id="print">
+
+                
+                
+            </div>
+
+        </form>
+    </div>
+    
+        
+            
+
+
+        
+   
+
+
+    <p id="demo"></p>
+    <p id="areacalc"></p>
+    <p id="idcard"></p>
+
+    <script>
+
+
+        {
+            function name1(){
+                event.preventDefault();
+
+                
+
+                let schoolname=document.createElement('h2')
+                schoolname.textContent="SN Public"
+
+                
+                
+                let name=document.createElement('p')
+                name.textContent=document.getElementById('name').value
+
+
+                let class1=document.createElement('p')
+                class1.textContent=document.getElementById('class').value
+
+                schoolname1=document.getElementById('print')
+                schoolname1.appenChild(schoolname)
+                schoolname1.appenChild(name)
+                schoolname1.appenChild(class1)
+
+                
+                
+            }
+
+            
+        }
+
+        function handlechange(){
+            document.getElementById("age")
+            let age1value=document.getElementById("age").value
+            document.write(age1value)
+            
+
+            console.log(event.target.value)
+            let agevalue= event.target.value
+            console.log(agevalue)
+        }
+
+        {
+            function submission(){
+                
+                let typevalue1=document.getElementById("type").value;
+                document.getElementById("demo").innerHTML=typevalue1;
+                 }
+
+        }
+
+        {
+            function calculate(){
+                let calculate1=(document.getElementById("squareside").value)**2
+                document.getElementById("areacalc").innerHTML=calculate1
+                
+            }
+
+        }
+        {
+
+
+
+
+
+        }
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

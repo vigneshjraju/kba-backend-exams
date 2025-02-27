@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Playlist</title>
+    <script defer src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .priority-high { color: red; }
+        .priority-medium { color: yellow; }
+        .priority-low { color: green; }
+        .watched { color: gray; text-decoration: line-through; }
+        ul { list-style-type: none; }
+        li { margin: 5px 0; }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-md mx-auto bg-white shadow-md rounded p-6">
+        <h1 class="text-xl font-bold mb-4">Movie Playlist</h1>
+        <div class="mb-4">
+            <input id="movieName" type="text" placeholder="Enter movie name" class="border rounded w-full p-2 mb-2">
+            <input id="priority" type="number" placeholder="Enter priority (1-3)" class="border rounded w-full p-2 mb-2">
+            <button id="addMovie" class="bg-blue-500 text-white px-4 py-2 rounded">Add Movie</button>
+        </div>
+        <ul id="movieList" class="mt-4"></ul>
+    </div>
+    <script>
+        const movies = [];
+        const priorities = [];
+
+        document.getElementById('addMovie').addEventListener('click', function() {
+            const movieName = document.getElementById('movieName').value.trim();
+            const priority = parseInt(document.getElementById('priority').value.trim());
+
+            if (!movieName) {
+                alert('Movie name cannot be empty.');
+                return;
+            }
+
+            if (!priority || priority < 1 || priority > 3) {
+                alert('Priority must be a number between 1 and 3.');
+                return;
+            }
+
+            movies.push(movieName);
+            priorities.push(priority);
+
+            const movieList = document.getElementById('movieList');
+            const li = document.createElement('li');
+            li.textContent = `${movieName} (Priority: ${priority})`;
+
+            if (priority === 1) li.classList.add('priority-high');
+            else if (priority === 2) li.classList.add('priority-medium');
+            else if (priority === 3) li.classList.add('priority-low');
+
+            const watchBtn = document.createElement('button');
+            watchBtn.textContent = 'Watched';
+            watchBtn.className = 'ml-2 bg-green-500 text-white px-2 py-1 rounded';
+            watchBtn.addEventListener('click', () => {
+                li.classList.add('watched');
+            });
+
+            const editBtn = document.createElement('button');
+            editBtn.textContent = 'Edit';
+            editBtn.className = 'ml-2 bg-yellow-500 text-white px-2 py-1 rounded';
+            editBtn.addEventListener('click', () => {
+                const newName = prompt('Enter new movie name:', movieName);
+                const newPriority = parseInt(prompt('Enter new priority (1-3):', priority));
+
+                if (!newName) {
+                    alert('Movie name cannot be empty.');
+                    return;
+                }
+
+                if (!newPriority || newPriority < 1 || newPriority > 3) {
+                    alert('Priority must be a number between 1 and 3.');
+                    return;
+                }
+
+                movies[movies.indexOf(movieName)] = newName;
+                priorities[movies.indexOf(newName)] = newPriority;
+
+                li.textContent = `${newName} (Priority: ${newPriority})`;
+
+                li.className = '';
+                if (newPriority === 1) li.classList.add('priority-high');
+                else if (newPriority === 2) li.classList.add('priority-medium');
+                else if (newPriority === 3) li.classList.add('priority-low');
+
+                li.appendChild(watchBtn);
+                li.appendChild(editBtn);
+                li.appendChild(removeBtn);
+            });
+
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Remove';
+            removeBtn.className = 'ml-2 bg-red-500 text-white px-2 py-1 rounded';
+            removeBtn.addEventListener('click', () => {
+                const index = movies.indexOf(movieName);
+                movies.splice(index, 1);
+                priorities.splice(index, 1);
+                li.remove();
+            });
+
+            li.appendChild(watchBtn);
+            li.appendChild(editBtn);
+            li.appendChild(removeBtn);
+            movieList.appendChild(li);
+
+            document.getElementById('movieName').value = '';
+            document.getElementById('priority').value = '';
+        });
+    </script>
+</body>
+</html>

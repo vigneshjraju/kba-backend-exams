@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        a=[[],[],[]];
+        let count=1
+
+        let sum=0
+
+        for(i=0;i<3;i++){
+
+            
+            for(j=0;j<3;j++){
+               
+                
+                a[i][j]=count;
+                document.write(" ",a[i][j])
+                count++;
+
+                sum+=a[i][j]
+
+
+            
+            }document.write(`<br>`)
+            
+        }document.write(`<br>sum of the array is: ${sum}`)
+
+
+        {
+            a=[1,2,3,4,5,6]
+            document.write(`<br><br>addition of 2 to the index of a=[1,2,3,4,5,6] is:`)
+
+            for(x in a){
+                a[x]+=2
+                
+            }
+            document.write(`<br> ${a}`)
+        } 
+
+        {
+            a=[1,2,3,4,5,6]
+            sum=0
+            for(x of a){
+                sum+=x
+            }
+            document.write(`<br><br> sum of the values of a is :${sum}`)
+        }
+
+        {
+            a=[2,4,7,9]
+            z=[]
+
+            for (x of a){
+                if (x!=7){
+                    z.push(x)
+                }
+
+            }
+            document.write("<br><br>value of z after exluding 7 of a is <br>",z)
+        }
+        
+
+        
+
+
+        {
+            a="paste"
+            count=0
+
+            for(x of a){
+                if(x=="a"){
+                    document.write("<br><br>z is in string of a")
+                    count=1
+                    break;
+                }
+   
+                
+            }
+
+            if(count==0) {
+                    document.write("<br><br>z is not in the string of a")
+  
+            }
+        }
+    
+
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+
+        function compare(){
+            let a=document.getElementById("first").value
+            let b=document.getElementById("second").value
+            let display1=document.getElementById("display")
+            display.className="text-lg font-bold mt-4 "
+
+            if(a===b){
+
+                let a1="The value of first number is same as second"
+                console.log(a1)
+                display1.textContent=a1
+                
+            }
+            else{
+                let a1="The value of first number is not same as second"
+                console.log(a1);
+                display1.textContent=a1
+                
+            }
+            
+            
+        }
+
+
+
+    </script>
+
+
+</head>
+<body>
+    
+
+    <div class="mx-12 my-12 px-12 py-12 w-[500px] bg-slate-300  ">
+
+        <div class="flex justify-between  ">
+            <p class="font-bold text-xl w-[200px] ">First number</p>
+
+            <input type="text" class="border-2 border-black flex-1" id="first">
+        </div>
+
+        <br>
+
+        <div class="flex justify-between ">
+            <p class="font-bold text-xl w-[200px]">Second number</p>
+
+            <input type="text" class="border-2 border-black flex-1" id="second">
+        </div>
+
+        <br>
+
+        <input type="button" value="Compare" class="bg-blue-400 border-2 border-black ml-[200px] rounded-xl w-28" onclick="compare()">
+
+        <p id="display" ></p>
+
+    </div>
+
+    
+
+    
+
+</body>
+</html>

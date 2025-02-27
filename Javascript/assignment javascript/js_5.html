@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <title>Document</title> <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+
+
+        function square(){
+            display2=document.getElementById("display1")
+
+            side=parseInt(document.getElementById("sidevalue").value)
+
+            if(side!=0){
+                area=side**2;
+
+                display2.innerHTML=`The area of square having side ${side} is ${area}`;
+            }
+
+            else{
+                display2.innerHTML="Enter a valid number"
+            }
+
+
+        }
+
+        function rectangle(){
+
+            display3=document.getElementById("display2")
+
+            length=parseInt(document.getElementById("lengthvalue").value)
+            breadth=parseInt(document.getElementById("breadthvalue").value)
+
+            if (length!=0 && breadth!=0){
+
+                areaofrect=length*breadth;
+
+                display3.innerHTML=`The area of rectangle having length:${length} and breadth:${breadth} is ${areaofrect}`
+            }
+            else{
+
+                display3.innerHTML="Enter a valid number"
+            }
+
+
+        }
+
+        function circle(){
+
+            display4=document.getElementById("display22");
+
+            radius1=parseInt(document.getElementById("radius").value)
+
+            if (radius!=0){
+                areaofcircle=3.14*(radius1**2)
+
+                display4.innerHTML=`The area of circle having radius ${radius1} is ${areaofcircle}`
+            }
+            else{
+
+            display3.innerHTML="Enter a valid number"
+            }
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+        <!--square-->
+        <div class="mx-12 my-12 px-12 py-12 w-[600px] border-2 border-black">
+
+            <div>
+                <label class="text-xl font-bold">Enter side of square : </label>
+
+                <input type="number" id="sidevalue" class="border-2 border-black">
+
+            </div>
+
+            <br>
+
+            <input type="button" value="Area of square" class="ml-40 border-2 border-black rounded-lg bg-blue-300" onclick="square()">
+            <br>
+            <br>
+
+            <div id="display1" class="text-xl font-bold text-blue-600"></div>
+
+        </div>
+
+        <!--rectangle-->
+        <div class="mx-12 my-12 px-12 py-12 w-[600px] border-2 border-black">
+
+            <div class="flex justify-between">
+                <label class="text-xl font-bold w-60">Enter the length: </label>
+
+                <input type="number" id="lengthvalue" class="flex-1 border-2 border-black">
+
+            </div>
+
+            <br>
+
+            <div class="flex justify-between">
+                <label class="text-xl font-bold w-60">Enter the breadth: </label>
+
+                <input type="number" id="breadthvalue" class="border-2 border-black flex-1">
+
+            </div>
+            <br>
+            <br>
+            <input type="button" value="Area of rectangle" class="ml-40 border-2 border-black rounded-lg bg-blue-300" onclick="rectangle()">
+            
+            <br>
+            <br>
+
+            <div id="display2" class="text-xl font-bold text-blue-600"></div>
+
+        </div>
+
+        <!--circle-->
+            <div class="mx-12 my-12 px-12 py-12 w-[600px] border-2 border-black">
+
+                <div>
+                    <label class="text-xl font-bold">Enter radius of circle : </label>
+    
+                    <input type="number" id="radius" class="border-2 border-black">
+                    
+                </div>
+
+                <br>
+                <input type="button" value="Area of circle" class="ml-40 border-2 border-black rounded-lg bg-blue-300" onclick="circle()">
+
+
+                <div id="display22" class="text-xl font-bold text-blue-600"></div>
+                
+            </div>
+
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Management</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        
+        const students = [];
+
+        
+        function addStudent() {
+            const name = document.getElementById("studentName").value;
+            const mark = parseFloat(document.getElementById("studentMark").value);
+
+            if (!name) {
+                alert("Please enter a valid name and mark.");
+                return;
+            }
+
+            
+            students.push({ name, mark });
+
+            
+            updateList();
+
+            
+            document.getElementById("studentName").value = "";
+            document.getElementById("studentMark").value = "";
+        }
+
+        
+        function updateList() {
+            const list = document.getElementById("studentList");
+            list.innerHTML = ""; 
+
+            students.forEach((student, index) => {
+                const listItem = document.createElement("div");
+                listItem.className = "flex justify-between px-4 py-2 border-b";
+
+                listItem.innerHTML = `${index + 1}. ${student.name} - ${student.mark} Marks`
+                
+
+                list.appendChild(listItem);
+            });
+        }
+
+        
+        function searchGrade() {
+            const searchName = document.getElementById("searchName").value.trim();
+
+            const student = students.find((student) => student.name.toLowerCase() === searchName.toLowerCase());
+
+            if (!student) {
+                document.getElementById("result").innerText = "Student not found.";
+                return;
+            }
+
+            
+            let grade = "F";
+            if (student.mark >= 90){
+                grade = "A";
+            } 
+            else if (student.mark >= 80){
+                grade = "B";
+            } 
+            else if (student.mark >= 70){
+                grade = "C";
+            }
+            else if (student.mark >= 60){
+                grade = "D";
+            }
+
+            document.getElementById("result").innerText = `Grade for ${student.name}: ${grade}`;
+        }
+
+        
+        function calculateClassAverage() {
+            if (students.length === 0) {
+                document.getElementById("classAverage").innerText = "No students to calculate average.";
+                return;
+            }
+
+            const totalMarks = students.reduce((total, student) => total + student.mark, 0);
+            const average = (totalMarks / students.length).toFixed(2);
+
+            document.getElementById("classAverage").innerText = `Class Average: ${average}`;
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="mx-12 my-12 px-12 py-12 w-[600px] border-2 border-gray-300 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-4">Student Marks Management</h1>
+
+        
+        <div class="mb-6">
+            <label class="text-lg font-bold  mb-2">Enter Name:</label>
+            <input type="text" id="studentName" class="border-2 border-gray-400 w-full p-2 mb-4">
+
+            <label class="text-lg font-bold  mb-2">Enter Mark:</label>
+            <input type="number" id="studentMark" class="border-2 border-gray-400 w-full p-2 mb-4">
+
+            <button class="bg-blue-500 text-white px-4 py-2 rounded" onclick="addStudent()">Add Student</button>
+        </div>
+
+        
+        <h2 class="text-xl font-bold mb-4">Student List</h2>
+
+        <div id="studentList" class="mb-6"></div>
+
+        
+        <div class="mb-6">
+            <label class="text-lg font-bold mb-2">Search for Grade:</label>
+            <input type="text" id="searchName" class="border-2 border-gray-400 w-full p-2 mb-4">
+            <button class="bg-green-500 text-white px-4 py-2 rounded" onclick="searchGrade()">Search</button>
+        </div>
+
+        <div id="result" class="font-bold text-lg mb-4"></div>
+
+        
+        <button class="bg-yellow-500 text-white px-4 py-2 rounded" onclick="calculateClassAverage()">Calculate Class Average</button>
+        <div id="classAverage" class="font-bold text-lg mt-4"></div>
+    </div>
+</body>
+</html>

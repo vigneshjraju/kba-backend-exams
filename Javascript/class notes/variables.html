@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="a">
+        25
+    </p>
+
+
+    <script>
+
+        let a=12;
+        let e=15;
+        let b="hai";
+        let c=true;
+        let d=null;
+        document.write("The value of a is:",a)
+        document.write("<br>The value of b is:",b)
+        document.write("<br>The value of c is:",c)
+        document.write("<br>The value of d is:",d)
+        document.write("<br><br>The value of a is:",typeof a)
+        document.write("<br>The value of b is:",typeof b)
+        document.write("<br>The value of c is:",typeof c)
+        document.write("<br>The value of d is:",typeof d)
+
+
+        document.getElementById("a").innerHTML= (25)+"years&nbsp"+(7)+"months"
+
+
+        a=41;
+        {
+            let a=45
+            document.write("<br><br>The value of a is:",a)
+
+        }
+
+        const m=45;
+        {
+            const m=58;
+            document.write("<br><br>The value of m is:",m)
+        }
+
+        s=a<e;
+        document.write("<br><br>",s)
+
+        p=e>a && m<a;
+        document.write(`<br><br>The result of logical AND is: ${p}`)
+
+        x=++a;
+        document.write(`<br><br>value of x is ${x}`)
+        document.write(`<br><br>value of a is ${a}`)
+
+
+        x=a++;
+        document.write(`<br><br>value of x is ${x}`)
+        document.write(`<br><br>value of a is ${a}`)
+
+        x=a--;
+        document.write(`<br><br>value of x is ${x}`)
+        document.write(`<br><br>value of a is ${a}`)
+
+
+         a = 5;
+         {let x1 = ++a;
+            console.log(x1);
+            console.log(a);
+
+            let x2 = a++;
+                console.log(x2);  
+                console.log(a);  
+                
+                let x3 = --a;
+                    console.log(x3);  
+                    console.log(a);   
+
+                    let x4 = a--;
+                        console.log(x4);  
+                        console.log(a);   
+
+         }
+
+
+
+
+
+
+    </script>
+</body>
+</html>

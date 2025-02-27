@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Playlist Manager</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .priority-1 {
+            color: red;
+        }
+
+        .priority-2 {
+            color: yellow;
+        }
+
+        .priority-3 {
+            color: green;
+        }
+
+        .watched {
+            color: gray;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body class="text-center">
+    <div>
+        <h1 class="text-2xl font-bold">Movie Playlist Manager Exercise</h1>
+        <br>
+        <div>
+            <p class="text-lg font-bold">Movie Name:</p>
+            <input type="text" id="name" placeholder="Type a movie name" class="border-2">
+        </div>
+        <br>
+        <div>
+            <p class="text-lg font-bold">Priority:</p>
+            <select id="priority" class="border-2">
+                <option value="1">High Priority</option>
+                <option value="2">Medium Priority</option>
+                <option value="3">Low Priority</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <input type="button" value="Submit" class="border-2 w-28 text-white bg-green-700" onclick="submitMovie()">
+        </div>
+        <div>
+            <ul class="text-lg font-bold list-none m-12" id="display"></ul>
+        </div>
+    </div>
+
+    <script>
+        const movies = []; 
+        const priority = []; 
+        const watched = []; 
+
+        function submitMovie() {
+            const movieName = document.getElementById("name").value;
+            const moviePriority = document.getElementById("priority").value;
+
+            if (!movieName) {
+                alert("Enter a Movie name");
+                return;
+            }
+
+            
+            movies.push(movieName);
+            priority.push(moviePriority);
+            watched.push(false); 
+
+            
+            document.getElementById("name").value = "";
+
+            
+            Movies1();
+        }
+
+        function Movies1() {
+            const display = document.getElementById("display");
+            display.innerHTML = ""; 
+
+            movies.forEach((movie, index) => {
+                const listItem = document.createElement("li");
+                listItem.textContent = movie;
+
+                
+                if (priority[index] == 1) {
+                    listItem.classList.add("priority-1");
+                } else if (priority[index] == 2) {
+                    listItem.classList.add("priority-2");
+                } else if (priority[index] == 3) {
+                    listItem.classList.add("priority-3");
+                }
+
+                
+                if (watched[index]) {
+                    listItem.classList.add("watched");
+                }
+
+                
+                const watchedButton = document.createElement("button");
+                watchedButton.textContent = "Watched";
+                watchedButton.className = "ml-4 border px-2 bg-blue-500 text-white";
+                watchedButton.onclick = () => Watched(index);
+
+                listItem.appendChild(watchedButton);
+                display.appendChild(listItem);
+            });
+        }
+
+        function Watched(index) {
+            watched[index] = !watched[index]; 
+            Movies1(); 
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-200">
+    
+    <h1 class="text-center font-bold text-3xl">ID Form</h1>
+
+    <div class="w-[700px] border-2 border-black ml-[490px] py-8">
+
+        <form onsubmit="submitid(event)">
+                
+                
+                    <h3 class="text-center font-bold text-2xl"> 
+                        Personal Details
+                    </h3>
+                <div class="flex gap-4 pl-[70px] text-center">
+                    <div>
+                        <p>
+                            First Name:
+                        </p>
+
+                        <input type="text" id="firstname" placeholder="Enter your First Name" class="ring-2 ring-blue-700">
+                    </div>
+
+                    <div>
+                        <p>
+                            Last Name:
+                        </p>
+
+                        <input type="text" id="lastname" placeholder="Enter your Last Name" class="ring-2 ring-blue-700">
+                    </div>
+                </div>
+                <br>
+                <div class="text-center ">
+                    <div>
+                        <p>
+                            Date of birth:
+                        </p>
+
+                        <input type="date" id="DOB" class="ring-2 ring-blue-700">
+                    </div>
+                    <br>
+                    <div>
+                        <p>
+                            Address:
+                        </p>
+
+                        <textarea  id="Address" placeholder="Type the address" class="ring-2 ring-blue-700"></textarea>
+                        
+                    </div>
+
+                   <div>
+                        <p>
+                            Phone Number:
+                        </p>
+
+                        <input type="number" id="phonenumber" placeholder="Type phone number" class="ring-2 ring-blue-700">
+                   </div> 
+                   <br>
+                   <input type="submit" value="Generate ID" class="bg-white font-bold ring-2 ring-blue-700 w-[100px] rounded-xl hover:bg-green-500">
+
+                </div>
+
+                
+
+              
+
+
+
+        </form>
+
+        
+    </div>
+
+        <div >
+            <p id="IDPROOF" ></p>
+        </div>
+
+
+    <div>
+
+
+
+
+
+
+    </div>
+
+
+    <script>
+
+        function submitid(event){
+
+            event.preventDefault();
+
+            firstname2=document.getElementById("firstname").value
+            lastname2=document.getElementById("lastname").value
+            Dateofbirth=document.getElementById("DOB").value
+            Address2=document.getElementById("Address").value
+            phonenumber2=document.getElementById("phonenumber").value
+
+            let person={
+                firstname3:firstname2,
+                lastname3:lastname2,
+                DOB3:Dateofbirth,
+                Address3:{details:Address2},
+                phonenumber3:phonenumber2,
+
+
+            }
+
+            idproofz=document.getElementById("IDPROOF")
+            .innerHTML=
+
+            `
+              <div class=" w-[700px] ml-[490px] my-8 text-center  py-8 outline-2 outline-dotted outline-black">  
+                <h2 class="font-bold text-2xl">ID Proof</h2>
+                    <br>
+                <p>Full Name:<br><span class="font-bold text-2xl">${person.firstname3} ${person.lastname3}</span><p>
+                    <br>
+                <p>Date of Birth:<br><span class="font-bold text-2xl">${person.DOB3}</span></p>
+                    <br>
+                <p>Address:<br><span class="font-bold text-2xl">${person.Address3.details}</span></p>
+                    <br>
+                <p>Phone Number:<br><span class="font-bold text-2xl">${person.phonenumber3}</span></p>
+              </div>  `
+
+
+
+
+        }
+
+
+
+    </script>
+
+
+
+</body>
+</html>

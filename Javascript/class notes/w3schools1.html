@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function submit1(event){
+            event.preventDefault();
+
+            let school=document.createElement('h2')
+            school.textContent="SN Public"
+
+            let name1=document.createElement('p')
+             name1.textContent=document.getElementById("name").value
+
+             let class1=document.createElement('p')
+            class1.textContent=document.getElementById("class").value
+
+            let date1=document.createElement('p')
+            date1.textContent=document.getElementById("date").value
+
+            
+            let display=document.getElementById("display")
+            
+            display.appendChild(school);
+             display.appendChild(name1); 
+             display.appendChild(class1); 
+             display.appendChild(date1);
+
+             
+           
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+    
+    <form onsubmit="submit1(event)">
+
+        <h1>Identity Card</h1>
+
+        <p>Name</p>
+        <input type="text" id="name">
+
+        <p>Class</p>
+        <input type="text" id="class">
+
+        <p>date of birth</p>
+        <input type="date" id="date">
+
+        <br>
+
+        <input type="submit" >
+
+
+    </form>
+
+    <div id="display"></div>
+
+
+    
+
+</body>
+</html>

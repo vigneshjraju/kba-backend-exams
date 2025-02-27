@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //Write a JavaScript program to check whether a given positive number is a multiple of 3 or 7.
+
+        {
+            let a=54
+
+            
+                b=(a%3==0 && a%7==0)? "Multiple of 3 and 7":"Not a Multiple of 3 and 7"
+                document.write(b)
+            
+            
+        }
+
+        //Write a JavaScript conditional statement to find the sign of the product of three numbers. Display with the specified sign.
+
+        {
+            let num1 = 3;
+            let num2 = -7;
+            let num3 = 2;
+
+            document.write("<br><br><br>num1: ",num1);
+            document.write("<br>num2: ",num2);
+            document.write("<br>num3: ",num3);
+            let product = num1 * num2 * num3;
+            document.write("<br>Product: ",product);
+
+            if (product > 0) {
+                document.write("<br>The sign is +");
+            } 
+            else if (product < 0) {
+                document.write("<br>The sign is -");
+            } else {
+                document.write("<br>The product is 0, and it has no sign.");
+            }
+            
+        }
+
+
+        //Write a program using switch case to check the CGPA on given condition.
+
+        //If the CGPA is 8 then print You got 8 CGPA.
+        //If the CGPA is 10 then print You got 10 CGPA.
+        // If the CGPA is 7 then print You got 7 CGPA.
+
+        {
+            let cgpa = 8; 
+            document.write("<br><br><br> CGPA    = ",cgpa)
+
+            switch (cgpa) {
+
+                case 8:
+                    document.write("<br>You got 8 CGPA.");
+                break;
+
+                case 10:
+                    document.write("<br>You got 10 CGPA.");
+                break;
+
+                case 7:
+                    document.write("<br>You got 7 CGPA.");
+                break;
+
+                default:
+                    document.write("<br>CGPA not in range 7, 8, or 10.");
+                break;
+            
+            }
+
+        }
+
+        //Write a program to print the month name by given number using switch
+
+        {
+            let monthNumber = 5; 
+            document.write("<br><br><br>The Month Number is ",monthNumber)
+
+            switch (monthNumber) {
+
+                case 1:
+                        document.write("<br>January");
+                break;
+
+                case 2:
+                        document.write("<br>February");
+                break;
+
+                case 3:
+                        document.write("<br>March");
+                break;
+
+                case 4:
+                        document.write("<br>April");
+                break;
+
+                case 5:
+                        document.write("<br>May");
+                break;
+
+                case 6:
+                        document.write("<br>June");
+                break;
+
+                case 7:
+                        document.write("<br>July");
+                break;
+
+                case 8:
+                        document.write("<br>August");
+                break;
+
+                case 9:
+                        document.write("<br>September");
+                break;
+
+                case 10:
+                        document.write("<br>October");
+                break;
+
+                case 11:
+                        document.write("<br>November");
+                break;
+
+                case 12:
+                        document.write("<br>December");
+                break;
+                
+                default:
+                        document.write("<br>Invalid month number. Please enter a number between 1 and 12.");
+                break;
+                
+            }
+
+        }
+        //Write a program to calculate the root of a quadratic equation.
+
+        {
+            
+                a=1;
+                document.write("<br><br>a=",a)
+                b=-5;
+                document.write("<br>b=",b)
+                c=6;
+                document.write("<br>c=",c)
+                d=b*b-4*a*c
+                    root=(-b+Math.sqrt(d))/(2*a)
+                    
+                    root1=(-b-Math.sqrt(d))/(2*a)
+
+                if(d>0){
+                    document.write("<br>The roots are ",root, " and " ,root1)
+                }
+
+                else if(d==0){
+                    document.write(root)
+                }
+
+                else{
+                document.write("no")
+                }
+        }
+
+        //Write a program to read temperature in centigrade and display a suitable message according to the temperature state below:
+        
+        //Temp < 0 then Freezing weather
+        // Temp 0-10 then Very Cold weather
+        // Temp 10-20 then Cold weather
+        // Temp 20-30 then Normal in Temp
+        // Temp 30-40 then Its Hot
+        // Temp >=40 then Its Very Hot
+
+        let temp = 25;
+        document.write("<br><br><br>Temperature = ",temp)
+
+        if (temp < 0) {
+                    document.write("<br>Freezing weather");
+        } 
+
+        else if (temp >= 0 && temp < 10) {
+                    document.write("<br>Very Cold weather");
+        } 
+
+        else if (temp >= 10 && temp < 20) {
+                    document.write("<br>Cold weather");
+        } 
+
+        else if (temp >= 20 && temp < 30) {
+                    document.write("<br>Normal in Temp");
+        } 
+
+        else if (temp >= 30 && temp < 40) {
+                    document.write("<br>It's Hot");
+        } 
+
+        else if (temp >= 40) {
+                    document.write("<br>It's Very Hot");
+        } 
+
+        else {
+                    document.write("<br>Invalid temperature input");
+        }
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

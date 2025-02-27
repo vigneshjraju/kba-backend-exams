@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+
+        function reversenumber() {
+
+
+            const num = document.getElementById("numberInput").value;
+            const display= document.getElementById("result");
+
+            if (!num) {
+                display.innerHTML = "Please enter a number.";
+                return;
+            }
+ 
+            const reversed = num.split("").reverse().join("");
+            display.innerHTML = `Reversed Number: ${reversed}`;
+        
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+    <div class="bg-slate-300 mx-12 my-12 px-12 py-12 w-[600px] border-2 border-black">
+        
+        
+        <div>
+            
+            <label class="text-xl font-bold">Enter number: </label>
+            <input type="text" id="numberInput" class="border-2 border-black">
+
+            <br><br>
+
+            
+            <input type="button" value="Reverse" class="bg-blue-300 border-2 border-black" onclick="reversenumber()">
+
+            <br><br>
+
+            
+            <div id="result" class="font-bold"></div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+</body>
+</html>

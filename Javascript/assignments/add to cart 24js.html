@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <label id="cloth">Shirt</label>
+        
+        <label>Quantity</label>
+            <input type="number" id="quantity1" >
+
+        <p>Price:<span id="pricee1">1000</span></p>
+        
+        <input type="button" value="Add to Cart" onclick="addShirtToCart()">
+
+
+    </div>
+
+    <div>
+        <label id="jeans">Jeans</label>
+        
+        <label>Quantity</label>
+            <input type="number" id="quantity2" >
+
+            <p>Price:<span id="pricee2">2000</span></p>  
+        
+        <input type="button" value="Add to Cart" onclick="addJeansToCart()">
+
+
+    </div>
+
+    <div>
+        <label id="socks">Socks</label>
+        
+        <label>Quantity</label>
+            <input type="number" id="quantity3" >
+
+            <p>Price:<span id="pricee3">3000</span></p>
+         
+        
+        <input type="button" value="Add to Cart" onclick="addSocksToCart()">
+
+
+    </div>
+
+    <br>
+    <br>
+    <input type="button" value="CheckOut" onclick="checkout()">
+
+
+    <script>
+
+        array=[]
+
+      function addShirtToCart(){
+
+        const item1=new Object();
+            item1.itemname=document.getElementById("cloth");
+            item1.itemquantity=document.getElementById("quantity1").value;
+            item1.itemprice=1000*item1.itemquantity
+
+            if (parseInt(item1.itemquantity) > 0) {
+                array.push(item1);
+            }
+
+        }
+        
+        function addJeansToCart(){
+
+        const item2=new Object(); 
+            item2.itemname=document.getElementById("jeans");
+            item2.itemquantity=document.getElementById("quantity2").value;
+            item2.itemprice=2000*item2.itemquantity
+            
+            if (parseInt(item2.itemquantity) > 0) {
+                array.push(item2);
+            }
+        }
+        function addSocksToCart(){
+
+        const item3=new Object();
+            item3.itemname=document.getElementById("socks");
+            item3.itemquantity=document.getElementById("quantity3").value;
+            item3.itemprice=3000*item3.itemquantity
+            
+
+            if (parseInt(item3.itemquantity) > 0) {
+                array.push(item3);
+            }
+
+            console.log(array)
+
+
+        }
+        
+
+        function checkout(){
+
+            let totalprice=0;
+
+            array.forEach((x) => {
+
+                totalprice+=x.itemprice;
+
+                
+            });
+
+            console.log(`total price=${totalprice}`)
+
+
+            
+
+            
+        }
+        
+        
+            
+            
+
+      
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+    //read array a=[20,25,30,35,40,45] and divide the array in to two seperate arrays having equal number of elements.
+    
+    { let a=[20,25,30,35,40,45];
+        let b=[];
+        let c=[];
+
+        document.write(`The value of a=[${a}]`)
+
+        for (x in a){
+            if(x<3){
+                b.push(a[x])
+                
+                
+
+            }
+
+            else{
+                c.push(a[x])
+                
+                
+            }
+        }
+        document.write(`<br><br> The first half of a is in b=[${b}]`);
+        document.write(`<br> The second half of a is in c=[${c}]`)
+    }
+
+
+    //concatinate two arrays a=[1,2,3,4] & b=[5,6,7,8] into a single array
+    
+    {
+
+        a=[1,2,3,4];
+        b=[5,6,7,8];
+
+        c=[];
+
+        document.write(`<br><br>Array of a=[${a}]`)
+        document.write(`<br>Array of b=[${b}]`)
+
+        for(x of a){
+            c.push(x)
+        }
+        for(x of b){
+            c.push(x)
+        }
+        document.write(`<br>Concatinate Array  c=[${c}]`)
+
+
+    }
+
+
+    //Read the array [1,6,7,8,2,3,4,2,2].Find the occurance of 2 in this array.
+    {
+
+        a=[1,6,7,8,2,3,4,2,2];
+        count=0;
+        document.write(`<br><br>The elements in array a=[${a}]`)
+
+        for(x of a){
+            if(x==2){
+                count+=1
+
+            }
+        }
+        document.write(`<br>The number 2 is found in array a and is occured ${count} times in array a.`)
+
+
+
+    }
+
+    //sort in ascending order
+
+    {
+        a=[55,42,98,23,65]
+
+        document.write(`<br><br>The array a=[${a}]`)
+
+        {   for(i=0;i<a.length;i++){
+                for(j=i+1;j<a.length;j++){
+                    if (a[i]>a[j]){
+                        temp=a[i];
+                        a[i]=a[j];
+                        a[j]=temp
+                    }
+                }
+            }
+
+         document.write(`<br>Ascending order of array a=[${a}]`)
+        }
+
+    //sort in descending order
+    
+        {
+            for(i=0;i<a.length;i++){
+                for(j=i+1;j<a.length;j++){
+                    if(a[i]<a[j]){
+                        temp=a[i]
+                        a[i]=a[j]
+                        a[j]=temp
+                    }
+                }
+            }
+            document.write(`<br>Descending order of array a=[${a}]`)
+        }
+
+        
+
+    }
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

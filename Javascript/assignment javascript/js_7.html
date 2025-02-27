@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+
+        let array=[];
+
+        function submit(){
+
+            values=document.getElementById("element").value;
+            display1=document.getElementById("display")
+            display1.className=" font-bold"
+
+            if(!values){
+
+                display1.innerHTML="Enter a value to add to array"
+                return;
+            }
+
+            else{
+
+                array.push(values);
+                display1.innerHTML = "Array: " + array.join(", ");
+
+                let selected=document.getElementById("select")
+
+                let option=document.createElement("option");
+                option.value=array.length-1
+                option.textContent="Element"+array.length;
+
+                selected.appendChild(option);
+
+    
+            }
+
+            
+        }
+
+        function selec(){
+
+            display1=document.getElementById("displayelement");
+            selected1=document.getElementById("select").value
+
+            if (!selected1){
+                display1.innerHTML="Please select an element"
+            }
+
+            else{
+                display1.innerHTML="Selected Element is "+array[selected1]
+            }
+
+
+        }
+
+        function sortarray(){
+
+            array.sort();
+            document.getElementById("display33").innerHTML="Sorted Array: " + array.join(", ");
+
+
+        }
+
+
+        function reversearray(){
+
+            array.reverse();
+            document.getElementById("display33").innerHTML="Reversed Array: " + array.join(", ");
+
+        }
+
+        function searchelement(){
+
+            let searchvalue=document.getElementById("search").value
+            
+            if(!searchvalue){
+                document.getElementById("display33").innerHTML="Enter a value to search in the array.";
+                return;
+            }
+
+            let index=array.indexOf(searchvalue);
+
+            if(index!=-1){
+                document.getElementById("display33").innerHTML=`Value "${searchvalue}" found at index ${index}.`;
+            }
+            else {
+                resultDisplay.innerHTML = `Value "${searchvalue}" not found in the array.`;
+            }
+
+
+        }
+
+    </script>
+
+</head>
+<body>
+    
+        <div class="bg-slate-300 mx-12 my-12 px-12 py-12 w-[600px] border-2 border-black">
+            
+            <div>
+                <label class="text-xl font-bold">Enter element : </label>
+
+                <input type="text" id="element" class="border-2 border-black">
+
+                <input type="button" value="submit" class="bg-blue-300 border-2 border-black" onclick="submit()">
+
+                <br>
+                <br>
+
+                <div id="display"></div>
+
+                <br>
+
+                <div class="flex justify-between w-[300px]">
+
+                    <label class="text-lg w-[150px]">Index  </label>
+
+                    <select  id="select" class="flex-1 border-2 border-black" onchange="selec()">
+                        <option disabled selected >select index</option>
+                    </select>
+
+                </div>
+
+
+                <br>
+
+                <div id="displayelement" class="font-bold"></div>
+
+                <br>
+
+                <input type="button" value="Sortarray" class="bg-green-300 border-2 border-black" onclick="sortarray()">
+                <input type="button" value="Reverse Array" class="bg-red-300 border-2 border-black" onclick="reversearray()">
+
+                <br>
+
+                <div>
+                    <label class="text-lg font-bold">Search: </label>
+                    <input type="text" id="search" class="border-2 border-black">
+                    <input type="button" value="Search" class="bg-yellow-300 border-2 border-black" onclick="searchelement()">
+                </div>
+
+                <br>
+
+                <div id="display33" class="font-bold"></div>
+
+            </div>
+        </div>
+
+</body>
+</html>

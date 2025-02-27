@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add to cart</title>
+
+    
+
+</head>
+<body>
+
+  <button id="cart" onclick="carts()">Add to cart</button>
+
+  <div id="display"></div>
+
+  <script>
+
+    function carts(){
+
+        const cart1=new Map([
+            ["Item Name","Apple"],
+            ["Quantity",10],
+            ["Price",450],
+            
+          ]
+          
+        )
+
+
+        
+
+        let output="";
+        let quantity=0;
+        let price=0;
+        
+
+        cart1.forEach((value,key)=>{
+          
+
+            output+=`${key}=${value}<br>`
+
+            if (key === "Quantity") {
+              quantity = value;
+            }
+            if (key === "Price") {
+              price = value;
+            }
+
+        })
+
+        if (quantity > 0 && price > 0) {
+          output += `<br>Total Price = ${quantity} * ${price} = ${
+            quantity * price
+          }<br>`;
+        }
+
+
+
+        output1=document.getElementById("display")
+        output1.innerHTML=output
+     
+        
+
+
+    }
+
+
+
+  </script>
+    
+    
+
+
+</body>
+</html>

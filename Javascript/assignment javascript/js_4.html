@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title> <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+
+        
+        { array=[];
+
+
+        function submit(){
+
+            
+            let names=document.getElementById("name").value;
+            array.push(names);
+
+            let select1=document.getElementById("select");
+
+            let option=document.createElement("option");
+            option.value=array.length-1;
+            option.textContent="Roll number "+array.length;
+
+            select1.appendChild(option);
+
+
+
+        }
+
+        function dropdown(){
+
+            display1=document.getElementById("display");
+            display.className="text-xl font-bold"
+
+            selected=document.getElementById("select").value
+
+            if(selected!=""){
+
+                display1.innerHTML="Name: "+array[selected];
+            }
+            else{
+                display1.innerHTML="";
+            }
+
+         }
+        }
+
+
+
+
+    </script>
+
+
+
+</head>
+<body>
+
+        
+        <div class="mx-12 my-12 rounded-xl border-2 border-black px-12 py-12 bg-slate-300 w-[500px]">
+            
+            <div>
+                <label>Name</label>
+                <input type="text" id="name" class="border-2 border-black">
+            </div>
+
+            <br>
+
+            <div>
+                <input type="button" class="bg-blue-300 ml-12 border-2 border-black rounded-xl w-28" value="Submit" onclick="submit()">
+            </div>
+
+            <br>
+
+            <div>
+                <label class="font-bold text-lg"> Roll number</label>
+
+                <select id="select" class="border-2 border-black" onchange="dropdown()">
+                    <option disabled selected>Select a Roll number</option>
+                </select>
+            </div>
+
+            <br>
+            <br>
+
+            <div id="display"></div>
+        </div>
+
+
+
+</body>
+</html>
